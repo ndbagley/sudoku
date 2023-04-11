@@ -1,18 +1,19 @@
 import numpy as np
 import sudoku
+import boardgenerator
 
 zero_board = np.zeros(shape=(9, 9), dtype=int)
 board_init = zero_board.copy()
 
-board_init[0,:] = [0,0,0,0,0,0,5,7,3]
-board_init[1,:] = [8,0,0,0,2,0,0,0,0]
-board_init[2,:] = [7,0,0,9,0,0,8,1,0]
-board_init[3,:] = [5,8,0,7,0,6,0,0,0]
-board_init[4,:] = [0,0,1,8,0,0,0,6,0]
-board_init[5,:] = [2,3,0,0,4,0,0,0,9]
-board_init[6,:] = [9,1,5,0,0,0,0,0,0]
-board_init[7,:] = [0,0,0,0,8,0,6,0,1]
-board_init[8,:] = [0,0,0,0,0,0,0,4,0]
+board_init[0,:] = [0,0,0,0,0,6,8,0,0]
+board_init[1,:] = [4,0,0,8,0,0,0,1,7]
+board_init[2,:] = [7,0,3,0,0,0,0,0,4]
+board_init[3,:] = [0,0,0,0,6,8,0,0,0]
+board_init[4,:] = [0,1,0,0,0,2,7,5,0]
+board_init[5,:] = [3,0,0,0,0,0,2,6,0]
+board_init[6,:] = [0,0,0,6,0,0,0,4,0]
+board_init[7,:] = [0,0,1,0,7,3,0,0,0]
+board_init[8,:] = [2,0,0,0,0,0,0,0,0]
 
 def nice_board(board):
 
@@ -47,3 +48,8 @@ def nice_board(board):
 
 bot = sudoku.SudokuBot(board_init)
 bot.puzzle_difficulty()
+str(bot)
+bot.solver()
+
+#generator = boardgenerator.BoardGenerator('Hard')
+#print(str(generator))
